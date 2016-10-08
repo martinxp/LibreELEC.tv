@@ -1,0 +1,29 @@
+--- a/drivers/amlogic/dvb_tv/aml_dvb.h	2016-07-20 16:13:01.000000000 +0200
++++ b/drivers/amlogic/dvb_tv/aml_dvb.h	2016-10-01 22:53:36.612708000 +0200
+@@ -233,6 +233,10 @@
+ 
+ struct aml_dvb {
+ 	struct dvb_device    dvb_dev;
++
++	struct dvb_frontend *fe;
++	struct work_struct aml_fe_wq;
++
+ 	struct aml_ts_input  ts[TS_IN_COUNT];
+ 	struct aml_s2p       s2p[S2P_COUNT];
+ 	struct aml_dmx       dmx[DMX_DEV_COUNT];
+@@ -258,11 +262,11 @@
+ extern int aml_dmx_hw_start_feed(struct dvb_demux_feed *dvbdmxfeed);
+ extern int aml_dmx_hw_stop_feed(struct dvb_demux_feed *dvbdmxfeed);
+ extern int aml_dmx_hw_set_source(struct dmx_demux *demux,
+-					enum dmx_source_t src);
+-extern int aml_stb_hw_set_source(struct aml_dvb *dvb, enum dmx_source_t src);
++					 dmx_source_t src);
++extern int aml_stb_hw_set_source(struct aml_dvb *dvb, dmx_source_t src);
+ extern int aml_dsc_hw_set_source(struct aml_dsc *dsc,
+-				enum dmx_source_t src, enum dmx_source_t dst);
+-extern int aml_tso_hw_set_source(struct aml_dvb *dvb, enum dmx_source_t src);
++				dmx_source_t src, dmx_source_t dst);
++extern int aml_tso_hw_set_source(struct aml_dvb *dvb, dmx_source_t src);
+ extern int aml_dmx_set_skipbyte(struct aml_dvb *dvb, int skipbyte);
+ extern int aml_dmx_set_demux(struct aml_dvb *dvb, int id);
+ extern int aml_dmx_hw_set_dump_ts_select

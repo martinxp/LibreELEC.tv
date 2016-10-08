@@ -1,0 +1,8 @@
+--- a/drivers/media/dvb-frontends/Makefile	2016-09-06 21:45:39.000000000 +0200
++++ b/drivers/media/dvb-frontends/Makefile	2016-09-27 04:14:33.015285999 +0200
+@@ -105,4 +105,5 @@
+ obj-$(CONFIG_DVB_RTL2832) += rtl2832.o
+ obj-$(CONFIG_DVB_M88RS2000) += m88rs2000.o
+ obj-$(CONFIG_DVB_AF9033) += af9033.o
++obj-$(CONFIG_DVB_AVL6882) += avl6882.o
+ 

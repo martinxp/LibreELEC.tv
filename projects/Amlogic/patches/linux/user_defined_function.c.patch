@@ -1,0 +1,26 @@
+--- /dev/null	2016-09-28 17:47:14.234734000 +0200
++++ b/drivers/amlogic/dvb_tv/user_defined_function.c	2016-10-01 22:05:58.492708000 +0200
+@@ -0,0 +1,23 @@
++/*
++* AMLOGIC DVB user_defined_function dummy driver.
++*/
++
++#include <linux/version.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++
++
++static int __init user_defined_function_init(void)
++{
++	return 0;
++}
++
++static void __exit user_defined_function_exit(void)
++{
++}
++
++module_init(user_defined_function_init);
++module_exit(user_defined_function_exit);
++
++MODULE_DESCRIPTION("amlogic user_defined_function driver");
++MODULE_AUTHOR("afl1");

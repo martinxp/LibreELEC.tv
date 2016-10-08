@@ -1,0 +1,34 @@
+--- a/drivers/amlogic/dvb_tv/Kconfig	2016-07-20 16:13:01.000000000 +0200
++++ b/drivers/amlogic/dvb_tv/Kconfig	2016-10-01 12:48:23.244708000 +0200
+@@ -315,12 +315,12 @@
+ 		Y: enable
+ 		N: disable
+ 		M: build as module
+-config AM_AVL68xx
+-	tristate "AVL68xx T2 demod driver"
++config AM_AVL6862
++	tristate "AVL6862 C/S2/T2 demod driver"
+ 	default y
+ 	depends on AM_DVB
+ 	help
+-		Select to enable AVL68xx demod driver.
++		Select to enable AVL6862 demod driver.
+ 		Y: enable
+ 		N: disable
+ 		M: build as module
+@@ -342,12 +342,12 @@
+ 		Y: enable
+ 		N: disable
+ 		M: build as module
+-config AM_R840
+-	tristate "the R840 tuner driver"
++config AM_R848
++	tristate "the R848 tuner driver"
+ 	default n
+ 	depends on AM_DVB
+ 	help
+-		Select to enable R840 tuner driver.
++		Select to enable R848 tuner driver.
+ 		Y: enable
+ 		N: disable
+ 		M: build as module

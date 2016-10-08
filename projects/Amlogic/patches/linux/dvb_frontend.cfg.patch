@@ -1,0 +1,17 @@
+--- a/drivers/media/dvb-frontends/Kconfig	2016-09-06 21:45:39.000000000 +0200
++++ b/drivers/media/dvb-frontends/Kconfig	2016-09-27 04:13:33.613001998 +0200
+@@ -4,6 +4,13 @@
+ comment "Multistandard (satellite) frontends"
+ 	depends on DVB_CORE
+ 
++config DVB_AVL6882
++        tristate "Availink AVL6882 DVB-T/T2/C/S/S2 demodulator"
++        depends on DVB_CORE && I2C
++        default m if !MEDIA_SUBDRV_AUTOSELECT
++        help
++          Say Y when you want to support this frontend.
++
+ config DVB_STB0899
+ 	tristate "STB0899 based"
+ 	depends on DVB_CORE && I2C
+

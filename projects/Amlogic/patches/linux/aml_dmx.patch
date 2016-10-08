@@ -1,0 +1,38 @@
+--- a/drivers/amlogic/dvb_tv/aml_dmx.c	2016-07-20 16:13:01.000000000 +0200
++++ b/drivers/amlogic/dvb_tv/aml_dmx.c	2016-10-01 22:54:00.516708000 +0200
+@@ -3768,7 +3768,7 @@
+ 	return 0;
+ }
+ 
+-int aml_dmx_hw_set_source(struct dmx_demux *demux, enum dmx_source_t src)
++int aml_dmx_hw_set_source(struct dmx_demux *demux, dmx_source_t src)
+ {
+ 	struct aml_dmx *dmx = (struct aml_dmx *)demux;
+ 	struct aml_dvb *dvb = (struct aml_dvb *)dmx->demux.priv;
+@@ -3823,7 +3823,7 @@
+ 
+ #define IS_SRC_DMX(_src) ((_src) >= AM_TS_SRC_DMX0 && (_src) <= AM_TS_SRC_DMX2)
+ 
+-int aml_stb_hw_set_source(struct aml_dvb *dvb, enum dmx_source_t src)
++int aml_stb_hw_set_source(struct aml_dvb *dvb, dmx_source_t src)
+ {
+ 	unsigned long flags;
+ 	int hw_src;
+@@ -3898,7 +3898,7 @@
+ }
+ 
+ int aml_dsc_hw_set_source(struct aml_dsc *dsc,
+-			enum dmx_source_t src, enum dmx_source_t dst)
++			 dmx_source_t src, dmx_source_t dst)
+ {
+ 	struct aml_dvb *dvb = dsc->dvb;
+ 	int ret = 0;
+@@ -3992,7 +3992,7 @@
+ 	return ret;
+ }
+ 
+-int aml_tso_hw_set_source(struct aml_dvb *dvb, enum dmx_source_t src)
++int aml_tso_hw_set_source(struct aml_dvb *dvb, dmx_source_t src)
+ {
+ 	int ret = 0;
+ 	unsigned long flags;

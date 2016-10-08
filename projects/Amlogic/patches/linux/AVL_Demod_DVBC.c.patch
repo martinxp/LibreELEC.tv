@@ -1,0 +1,26 @@
+--- /dev/null	2016-09-28 17:47:14.234734000 +0200
++++ b/drivers/amlogic/dvb_tv/AVL_Demod_DVBC.c	2016-10-01 22:04:05.080708000 +0200
+@@ -0,0 +1,23 @@
++/*
++* AMLOGIC DVB AVL_Demod_DVBC dummy driver.
++*/
++
++#include <linux/version.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++
++
++static int __init AVL_Demod_DVBC_init(void)
++{
++	return 0;
++}
++
++static void __exit AVL_Demod_DVBC_exit(void)
++{
++}
++
++module_init(AVL_Demod_DVBC_init);
++module_exit(AVL_Demod_DVBC_exit);
++
++MODULE_DESCRIPTION("amlogic AVL_Demod_DVBC driver");
++MODULE_AUTHOR("afl1");
