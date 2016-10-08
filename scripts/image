@@ -255,8 +255,8 @@ fi
     perl $BUILD/linux-$(kernel_version)/scripts/mkknlimg $BUILD/linux-$(kernel_version)/arch/$TARGET_KERNEL_ARCH/boot/$KERNEL_TARGET $TARGET_IMG/$IMAGE_NAME.kernel
     echo "...done"
   else
-   if [ -n "$DEVICE" -a -f "$PROJECT_DIR/$PROJECT/kernel" ]; then
-    cp -PR $PROJECT_DIR/$PROJECT/kernel $TARGET_IMG/$IMAGE_NAME.kernel
+   if [ -n "$DEVICE" -a -f "$PROJECT_DIR/$PROJECT/install/kernel" ]; then
+    cp -PR $PROJECT_DIR/$PROJECT/install/kernel $TARGET_IMG/$IMAGE_NAME.kernel
    else
     cp -PR $BUILD/linux-$(kernel_version)/arch/$TARGET_KERNEL_ARCH/boot/$KERNEL_TARGET $TARGET_IMG/$IMAGE_NAME.kernel
    fi
